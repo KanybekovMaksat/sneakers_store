@@ -1,14 +1,21 @@
 <script setup>
-import Card from './Card.vue';
+import Card from './Card.vue'
+
+defineProps({
+  sneakers: Array
+})
 </script>
 
 <template>
-      <div class="grid grid-cols-4 gap-5">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+  <div class="grid grid-cols-4 gap-5">
+    <Card
+      v-for="sneaker in sneakers"
+      :key="sneaker.id"
+      :title="sneaker.title"
+      :price="sneaker.price"
+      :imgUrl="sneaker.imageUrl"
+      :is-added="true"
+      :isFavorite="true"
+    />
+  </div>
 </template>

@@ -14,8 +14,8 @@ defineProps({
       :title="sneaker.title"
       :price="sneaker.price"
       :imgUrl="sneaker.imageUrl"
-      :is-added="true"
-      :isFavorite="true"
+      :is-added="false"
+      :isFavorite="false"
     />
   </div>
 </template>

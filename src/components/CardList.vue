@@ -4,6 +4,8 @@ import Card from './Card.vue'
 defineProps({
   sneakers: Array
 })
+
+const emit = defineEmits(['addToFavorite'])
 </script>
 
 <template>
@@ -11,11 +13,13 @@ defineProps({
     <Card
       v-for="sneaker in sneakers"
       :key="sneaker.id"
+      :id="sneaker.id"
       :title="sneaker.title"
       :price="sneaker.price"
       :imgUrl="sneaker.imageUrl"
       :is-added="false"
-      :isFavorite="false"
+      :onClickFavorite="() => emit('addToFavorite', sneaker)"
+      :isFavorite="sneaker.isFavorite"
     />
   </div>
 </template>
